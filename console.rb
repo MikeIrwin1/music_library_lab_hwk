@@ -23,5 +23,9 @@ album4.save
 artists = Artist.all()
 albums = Album.all()
 
+catalogue = artist1.albums
+nirvana = album1.artist
+
+
 binding.pry
 nil
