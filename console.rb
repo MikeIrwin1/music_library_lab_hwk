@@ -7,8 +7,10 @@ Artist.delete_all
 
 artist1 = Artist.new({'name' => 'Nirvana'})
 artist2 = Artist.new({'name' => 'Van Halen'})
+artist3 = Artist.new({'name' => 'Motorhead'})
 artist1.save
 artist2.save
+artist3.save
 
 album1 = Album.new({ 'title' => 'Nevermind', 'genre' => 'grunge', 'artist_id' => artist1.id})
 album2 = Album.new({ 'title' => 'In Utero', 'genre' => 'grunge', 'artist_id' => artist1.id})
@@ -20,13 +22,15 @@ album2.save
 album3.save
 album4.save
 
-artists = Artist.all()
-albums = Album.all()
-
 catalogue = artist1.albums
 nirvana = album1.artist
 van_halen = Artist.find(artist2.id)
 nevermind = Album.find(album1.id)
+
+album1.title = 'Grunge is Dead'
+album1.update
+artists = Artist.all()
+albums = Album.all()
 
 
 binding.pry
