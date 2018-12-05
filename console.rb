@@ -27,10 +27,7 @@ nirvana = album1.artist
 van_halen = Artist.find(artist2.id)
 nevermind = Album.find(album1.id)
 
-album1.title = 'Grunge is Dead'
-album1.update
-artists = Artist.all()
-albums = Album.all()
+artist1.delete
 
 
 binding.pry
