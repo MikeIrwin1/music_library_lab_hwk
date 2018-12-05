@@ -10,11 +10,11 @@ artist2 = Artist.new({'name' => 'Van Halen'})
 artist1.save
 artist2.save
 
-album1 = Album.new({ 'title' => 'Nevermind', 'genre' => 'grunge'})
-album2 = Album.new({ 'title' => 'In Utero', 'genre' => 'grunge'})
-album3 = Album.new({ 'title' => 'Bleach', 'genre' => 'grunge'})
-album4 = Album.new({ 'title' => '1984', 'genre' => 'rock'})
-album4 = Album.new({ 'title' => '5150', 'genre' => 'rock'})
+album1 = Album.new({ 'title' => 'Nevermind', 'genre' => 'grunge', 'artist_id' => artist1.id})
+album2 = Album.new({ 'title' => 'In Utero', 'genre' => 'grunge', 'artist_id' => artist1.id})
+album3 = Album.new({ 'title' => 'Bleach', 'genre' => 'grunge', 'artist_id' => artist1.id})
+album4 = Album.new({ 'title' => '1984', 'genre' => 'rock', 'artist_id' => artist2.id})
+album4 = Album.new({ 'title' => '5150', 'genre' => 'rock', 'artist_id' => artist2.id})
 album1.save
 album2.save
 album3.save
