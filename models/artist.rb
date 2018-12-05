@@ -1,5 +1,6 @@
 require ('pg')
 require_relative('album')
+require_relative( '../db/sql_runner')
 
 class Artist
 
@@ -12,7 +13,6 @@ class Artist
   end
 
   def save()
-    db = PG.connect({ dbname: 'music_library', host: 'localhost'})
     sql = "INSERT INTO artists
     (
       name
@@ -21,11 +21,9 @@ class Artist
     (
       $1
     )
-    RETURNING id"
+    RETURNING *"
     values = [@name]
-    db.prepare("save", sql)
-    @id = db.exec_prepared("save", values)[0]['id'].to_i
-    db.close()
+    @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
 end
