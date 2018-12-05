@@ -2,13 +2,23 @@ require('pry')
 require_relative('models/artist')
 require_relative('models/album')
 
+Album.delete_all
+Artist.delete_all
+
 artist1 = Artist.new({'name' => 'Nirvana'})
 artist2 = Artist.new({'name' => 'Van Halen'})
 artist1.save
 artist2.save
 
 album1 = Album.new({ 'title' => 'Nevermind', 'genre' => 'grunge'})
+album2 = Album.new({ 'title' => 'In Utero', 'genre' => 'grunge'})
+album3 = Album.new({ 'title' => 'Bleach', 'genre' => 'grunge'})
+album4 = Album.new({ 'title' => '1984', 'genre' => 'rock'})
+album4 = Album.new({ 'title' => '5150', 'genre' => 'rock'})
 album1.save
+album2.save
+album3.save
+album4.save
 
 artists = Artist.all()
 albums = Album.all()
