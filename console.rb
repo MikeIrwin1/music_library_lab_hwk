@@ -25,6 +25,7 @@ albums = Album.all()
 
 catalogue = artist1.albums
 nirvana = album1.artist
+van_halen = Artist.find(artist2.id)
 
 
 binding.pry
